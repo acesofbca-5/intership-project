@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Script+</title>
+</head>
+<body class="editor-page">
+
+<div class="menu-bar">
+  <div class="menu-item">File
+    <div class="dropdown">
+      <div class="dropdown-item" onclick="newTab()">New</div>
+      <div class="dropdown-item" onclick="openFile()">Open</div>
+      <div class="dropdown-item" onclick="saveFile()">Save</div>
+      <div class="dropdown-item" onclick="saveAsFile()">Save As</div>
+    </div>
+  </div>
+
+  <div class="menu-item">Edit
+    <div class="dropdown">
+      <div class="dropdown-item" onclick="document.execCommand('undo')">Undo</div>
+      <div class="dropdown-item" onclick="document.execCommand('redo')">Redo</div>
+    </div>
+  </div>
+
+  <div class="menu-item">Format
+    <div class="dropdown">
+      <div class="dropdown-item" >Scene Heading</div>
+      <div class="dropdown-item" >Action</div>
+      <div class="dropdown-item" >Character</div>
+      <div class="dropdown-item" >Parenthetical</div>
+      <div class="dropdown-item" >Dialogue</div>
+      <div class="dropdown-item" >Transition</div>
+      <div class="dropdown-item" >Shot / Camera</div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-container" id="tabsContainer">
+  <div class="tab active" data-id="1" onclick="switchTab(1)">Untitled-1 <span class="tab-close" onclick="closeTab(event,1)">×</span></div>
+  <div class="tab-new-btn" onclick="newTab()">+</div>
+</div>
+
+<div class="editor-container">
+  <textarea id="scriptEditor"></textarea>
+  <div id="aiPanel">
+    <div class="ai-btn">AI Spell Check</div>
+    <div class="ai-btn">AI Grammar Check</div>
+    <div class="ai-btn">AI Summarization</div>
+    <div id="output">AI output will appear here…</div>
+  </div>
+</div>
+</body>
+</html>
